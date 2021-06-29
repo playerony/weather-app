@@ -27,6 +27,7 @@
   },
   "include": [
     "src",
+    "cypress",
     "jest.config.js",
     "config-overrides.js"
   ]
