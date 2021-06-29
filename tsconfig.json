@@ -21,7 +21,10 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src",
+    "./",
     ".eslintrc"
+  ],
+  "exclude": [
+    "src/**/*.stories.tsx"
   ]
 }
