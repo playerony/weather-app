@@ -11,7 +11,8 @@
     "prepare": "husky install",
     "reinstall-deps": "bash ./scripts/reinstall-deps.sh",
     "start": "react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "typecheck": "tsc --noEmit -p . --pretty"
   },
   "dependencies": {
     "react": "^17.0.2",
