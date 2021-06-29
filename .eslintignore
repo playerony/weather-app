@@ -4,4 +4,7 @@
 *.less
 *.json
 *.stories.tsx
-src/process-env.d.ts
+
+build
+node_modules
+src/react-app-env.d.ts
