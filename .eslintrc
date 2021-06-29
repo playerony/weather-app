@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "airbnb-typescript"
+  ],
+  "parserOptions": {
+    "project": [
+      "./tsconfig.json"
+    ]
+  },
+  "env": {
+    "jest": true,
+    "node": true,
+    "browser": true
+  },
+  "plugins": [
+    "react-hooks"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.tsx",
+        "*.ts",
+        "*.js"
+      ]
+    }
+  ]
+}
