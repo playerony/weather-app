@@ -14,6 +14,7 @@
     "test": "NODE_ENV=test jest",
     "test:ci": "NODE_ENV=test jest --ci --coverage --forceExit",
     "test:coverage": "NODE_ENV=test jest --coverage",
+    "test:e2e": "npx cypress run --port 4000 --spec './cypress/integration/**/*.spec.*'",
     "test:watch": "NODE_ENV=test jest --watch",
     "typecheck": "tsc --noEmit -p . --pretty"
   },
