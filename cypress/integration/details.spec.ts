@@ -28,3 +28,5 @@ describe('details', () => {
     cy.get('[data-test-id=company-details] p').contains('The Boeing Company Description');
   });
 });
+
+export {};
