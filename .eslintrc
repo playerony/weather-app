@@ -1,0 +1,32 @@
+{
+  "extends": [
+    "airbnb-typescript"
+  ],
+  "parserOptions": {
+    "project": [
+      "./tsconfig.json"
+    ]
+  },
+  "env": {
+    "jest": true,
+    "node": true,
+    "browser": true
+  },
+  "plugins": [
+    "react-hooks"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.tsx",
+        "*.ts",
+        "*.js"
+      ],
+      "rules": {
+        "object-curly-newline": "off",
+        "react/react-in-jsx-scope": "off",
+        "import/prefer-default-export": "off"
+      }
+    }
+  ]
+}
