@@ -2,9 +2,13 @@
   "private": true,
   "name": "weather-app",
   "version": "0.1.0",
+  "description": "Simple weather app written with react for education purposes.",
+  "license": "MIT",
+  "author": "Paweł Wojtasiński",
   "scripts": {
     "build": "react-app-rewired build",
     "build-storybook": "build-storybook -s public",
+    "check": "concurrently \"npm run lint\" \"npm run typecheck\" \"npm run test\"",
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*\"",
     "lint": "eslint \"src/**/*\"",
@@ -20,11 +24,13 @@
     "test:watch": "NODE_ENV=test jest --watch",
     "typecheck": "tsc --noEmit -p . --pretty"
   },
+  "typings": "./src/types.d.ts",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/react-hooks": "^7.0.0",
     "@testing-library/user-event": "^12.1.10",
+    "concurrently": "^6.2.0",
     "customize-cra": "^1.0.0",
     "react": "^17.0.2",
     "react-app-rewire-alias": "^1.0.3",
@@ -66,6 +72,21 @@
     "ts-jest": "26.4.1",
     "typescript": "^4.1.2"
   },
+  "keywords": [
+    "app",
+    "architecture",
+    "atomic",
+    "atomic design",
+    "clean",
+    "clean architecture",
+    "cypress",
+    "design",
+    "pattern",
+    "react",
+    "storybook",
+    "weather",
+    "weather-app"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
