@@ -5,6 +5,7 @@
   "scripts": {
     "build": "react-app-rewired build",
     "build-storybook": "build-storybook -s public",
+    "check": "concurrently \"npm run lint\" \"npm run typecheck\" \"npm run test\"",
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*\"",
     "lint": "eslint \"src/**/*\"",
@@ -25,6 +26,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/react-hooks": "^7.0.0",
     "@testing-library/user-event": "^12.1.10",
+    "concurrently": "^6.2.0",
     "customize-cra": "^1.0.0",
     "react": "^17.0.2",
     "react-app-rewire-alias": "^1.0.3",
