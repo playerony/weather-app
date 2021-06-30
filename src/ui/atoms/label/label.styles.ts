@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { typeScale, fontWeight, respondToMax } from '@infrastructure';
+
 import { StyledLabelProps } from './label.types';
 
 const StyledLabel = styled.label<StyledLabelProps>`
