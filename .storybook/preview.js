@@ -2,6 +2,8 @@ import { withA11y } from '@storybook/addon-a11y';
 import { withKnobs } from '@storybook/addon-knobs';
 import { addParameters, addDecorator } from '@storybook/react';
 
+import { AppProvider } from '@application';
+
 addParameters({
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -17,13 +19,13 @@ addParameters({
 });
 
 addDecorator((Story) => (
-  <div>
+  <AppProvider>
     <Story />
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Raleway:400,500,700&display=swap"
       rel="stylesheet"
     ></link>
-  </div>
+  </AppProvider>
 ));
 
 addDecorator(withA11y);

@@ -1,7 +1,8 @@
 import { AppProvider } from '../context';
+import { DashboardPage } from '../pages';
 
-export const App = () => (
+export const App = (): JSX.Element => (
   <AppProvider>
-    <h1>App</h1>
+    <DashboardPage />
   </AppProvider>
 );

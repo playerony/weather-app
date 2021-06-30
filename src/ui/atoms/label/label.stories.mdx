@@ -1,0 +1,30 @@
+import { boolean } from '@storybook/addon-knobs';
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+import { Label } from '@ui';
+
+<Meta title="Design System/atoms/Label" component={Label} />
+
+# Label
+
+Label is used to display short texts or paragraphs.
+
+<Preview withToolbar>
+  <Story name="default">
+    <Label strong={boolean('Strong', false)} pointer={boolean('Pointer', false)}>
+      Short label
+    </Label>
+  </Story>
+</Preview>
+
+# Same line label
+
+Same line flag allow to create nested labels in one line
+
+<Preview withToolbar>
+  <Story name="same line">
+    <Label strong>
+      Test: <Label sameLine>Nested label</Label>
+    </Label>
+  </Story>
+</Preview>
