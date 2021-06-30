@@ -1,7 +1,8 @@
 import { withA11y } from '@storybook/addon-a11y';
 import { withKnobs } from '@storybook/addon-knobs';
-import { AppProvider } from '@application/context';
 import { addParameters, addDecorator } from '@storybook/react';
+
+import { AppProvider } from '@application';
 
 addParameters({
   actions: { argTypesRegex: '^on[A-Z].*' },
