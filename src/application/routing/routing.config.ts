@@ -3,9 +3,9 @@ import { RouteComponentProps } from 'react-router-dom';
 
 import * as Pages from '../pages';
 
-export interface RouteConfig {
-  component: ComponentType<RouteComponentProps<any>> | ComponentType<any>;
+export interface RoutingConfig {
   exact?: boolean;
+  component: ComponentType<RouteComponentProps<any>> | ComponentType<any>;
 }
 
 export enum Routes {
@@ -14,7 +14,7 @@ export enum Routes {
   ANY = '*',
 }
 
-export const routingConfig: Record<Routes, RouteConfig> = {
+export const routingConfig: Record<Routes, RoutingConfig> = {
   [Routes.DASHBOARD]: {
     component: Pages.DashboardPage,
   },
