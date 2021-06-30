@@ -24,6 +24,7 @@
       ],
       "rules": {
         "import/no-cycle": "off",
+        "react/jsx-indent": "off",
         "operator-linebreak": "off",
         "object-curly-newline": "off",
         "no-prototype-builtins": "off",
@@ -32,6 +33,7 @@
         "@typescript-eslint/indent": "off",
         "import/prefer-default-export": "off",
         "react/jsx-props-no-spreading": "off",
+        "react/jsx-one-expression-per-line": "off",
         "@typescript-eslint/no-use-before-define": "off"
       }
     }
