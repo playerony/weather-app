@@ -24,7 +24,7 @@
     "test:watch": "NODE_ENV=test jest --watch",
     "typecheck": "tsc --noEmit -p . --pretty"
   },
-  "typings": "./src/types.d.ts",
+  "types": "./src/types.d.ts",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
