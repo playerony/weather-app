@@ -14,7 +14,7 @@ export enum Routes {
   ANY = '*',
 }
 
-export const AppRouteConfig: Record<Routes, RouteConfig> = {
+export const routingConfig: Record<Routes, RouteConfig> = {
   [Routes.DASHBOARD]: {
     component: Pages.DashboardPage,
   },
