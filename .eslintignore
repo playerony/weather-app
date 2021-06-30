@@ -3,6 +3,7 @@
 *.mdx
 *.less
 *.json
+*.ts.snap
 *.stories.tsx
 
 build
