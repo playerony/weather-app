@@ -13,6 +13,27 @@ export function useGet<ResultsType>(url: string = ''): State<ResultsType> {
     isLoading: false,
   });
 
+  function onFetchSuccess(response: AxiosResponse<ResultsType>, didCancel: boolean) {
+    if (!didCancel && response?.status === 200) {
+      setState({
+        hasError: false,
+        isLoading: false,
+        results: response.data,
+      });
+    } else {
+      throw new Error('Status is not 200');
+    }
+  }
+
+  function onFetchError(didCancel: boolean) {
+    if (!didCancel) {
+      setState({
+        hasError: true,
+        isLoading: false,
+      });
+    }
+  }
+
   useEffect(() => {
     let didCancel = false;
 
@@ -26,22 +47,9 @@ export function useGet<ResultsType>(url: string = ''): State<ResultsType> {
         try {
           const response: AxiosResponse<ResultsType> = await axiosInstance.get(url);
 
-          if (!didCancel && response?.status === 200) {
-            setState({
-              hasError: false,
-              isLoading: false,
-              results: response.data,
-            });
-          } else {
-            throw new Error('Status is not 200');
-          }
+          onFetchSuccess(response, didCancel);
         } catch (error) {
-          if (!didCancel) {
-            setState({
-              hasError: true,
-              isLoading: false,
-            });
-          }
+          onFetchError(didCancel);
         }
       }
     }
