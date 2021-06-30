@@ -1,0 +1,24 @@
+import { boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+import { InputWithLoader } from '@ui';
+
+<Meta title="Design System/molecules/InputWithLoader" component={InputWithLoader} />
+
+# InputWithLoader
+
+Input with loader is used to display loader inside of input.
+
+<Preview withToolbar>
+  <Story name="default">
+    <InputWithLoader
+      placeholder="Placeholder..."
+      onBlur={action('input-blur')}
+      onFocus={action('input-focus')}
+      onChange={action('input-change')}
+      isLoading={boolean('Loading', true)}
+      disabled={boolean('Disabled', false)}
+    />
+  </Story>
+</Preview>

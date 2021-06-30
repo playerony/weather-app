@@ -26,6 +26,13 @@ const StyledLabel = styled.label<StyledLabelProps>`
     css`
       cursor: pointer;
     `}
+
+
+  ${({ theme, error }) =>
+    error &&
+    css`
+      color: ${theme.color.errorColor};
+    `}
   
   ${respondToMax.xmobile`
     font-size: ${typeScale.helperText};

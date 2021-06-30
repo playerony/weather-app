@@ -14,6 +14,7 @@ const StyledInput = styled.input<InputProps>`
   background-color: transparent;
   border-bottom: 2px solid currentColor;
   padding: ${spacing.xmedium} ${spacing.xmedium};
+  color: ${({ theme }) => theme.color.primaryColor};
 
   &::placeholder {
     color: currentColor;
