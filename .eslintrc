@@ -23,6 +23,7 @@
         "*.js"
       ],
       "rules": {
+        "import/no-cycle": "off",
         "object-curly-newline": "off",
         "no-prototype-builtins": "off",
         "react/react-in-jsx-scope": "off",

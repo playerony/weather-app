@@ -1,1 +1,7 @@
-export const App = () => <h1>App</h1>;
+import { AppProvider } from '../context';
+
+export const App = () => (
+  <AppProvider>
+    <h1>App</h1>
+  </AppProvider>
+);
