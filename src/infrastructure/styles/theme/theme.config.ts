@@ -17,5 +17,6 @@ export const defaultTheme: Theme = {
     textColorInverted: neutral[100],
     textColorOnPrimary: neutral[100],
     secondaryBackground: neutral[300],
+    textFieldBackground: neutral[200],
   },
 };

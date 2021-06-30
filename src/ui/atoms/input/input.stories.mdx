@@ -1,0 +1,23 @@
+import { boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+import { Input } from '@ui';
+
+<Meta title="Design System/atoms/Input" component={Input} />
+
+# Input
+
+Input is used to allow users to type something.
+
+<Preview withToolbar>
+  <Story name="default">
+    <Input
+      placeholder="Placeholder..."
+      onBlur={action('input-blur')}
+      onFocus={action('input-focus')}
+      onChange={action('input-change')}
+      disabled={boolean('Disabled', false)}
+    />
+  </Story>
+</Preview>

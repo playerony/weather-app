@@ -1,0 +1,35 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+import { Loader } from '@ui';
+
+<Meta title="Design System/atoms/Loader" component={Loader} />
+
+# Loader
+
+Default loader is used to display loading state of a page or a section.
+
+<Preview withToolbar>
+  <Story name="default">
+    <Loader />
+  </Story>
+</Preview>
+
+# Large loader
+
+Large loader is used to display loading state of a page.
+
+<Preview withToolbar>
+  <Story name="large">
+    <Loader modifiers={['large']} />
+  </Story>
+</Preview>
+
+# Small loader
+
+Small loader is used to display loading state of an input of button.
+
+<Preview withToolbar>
+  <Story name="small">
+    <Loader modifiers={['small']} />
+  </Story>
+</Preview>

@@ -11,7 +11,8 @@ export type Color =
   | 'textColorInverted'
   | 'textColorOnPrimary'
   | 'primaryActiveColor'
-  | 'secondaryBackground';
+  | 'secondaryBackground'
+  | 'textFieldBackground';
 
 export interface Theme {
   color: { [key in Color]: string };
