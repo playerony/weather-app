@@ -1,7 +1,7 @@
 import { ComponentType } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
-import * as Pages from '../pages';
+import * as pages from '../pages';
 
 export interface RoutingConfig {
   exact?: boolean;
@@ -16,12 +16,12 @@ export enum Routes {
 
 export const routingConfig: Record<Routes, RoutingConfig> = {
   [Routes.DASHBOARD]: {
-    component: Pages.DashboardPage,
+    component: pages.DashboardPage,
   },
   [Routes.NOT_FOUND]: {
-    component: Pages.NotFoundPage,
+    component: pages.NotFoundPage,
   },
   [Routes.ANY]: {
-    component: Pages.NotFoundPage,
+    component: pages.NotFoundPage,
   },
 };
