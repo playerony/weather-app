@@ -1,2 +1,2 @@
-export * from './error/error.component';
-export * from './dashboard/dashboard.component';
+export * from './molecules';
+export * from './templates';

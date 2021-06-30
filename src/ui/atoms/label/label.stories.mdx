@@ -11,7 +11,11 @@ Label is used to display short texts or paragraphs.
 
 <Preview withToolbar>
   <Story name="default">
-    <Label strong={boolean('Strong', false)} pointer={boolean('Pointer', false)}>
+    <Label
+      error={boolean('Error', false)}
+      strong={boolean('Strong', false)}
+      pointer={boolean('Pointer', false)}
+    >
       Short label
     </Label>
   </Story>
