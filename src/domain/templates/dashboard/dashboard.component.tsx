@@ -15,11 +15,7 @@ export function Dashboard({
   const onSearchsInputChange = (event: FormEvent<HTMLInputElement>): void =>
     setCity(event.currentTarget.value);
 
-  function getErrorMessage(): string {
-    const isError = hasError || (results === null && !isLoading);
-
-    return isError ? 'Nothing found' : '';
-  }
+  const errorMessage = hasError ? 'No weather details for the provided city name.' : '';
 
   return (
     <>
@@ -29,8 +25,8 @@ export function Dashboard({
       <SearchInput
         value={city}
         isLoading={isLoading}
+        errorMessage={errorMessage}
         onChange={onSearchsInputChange}
-        errorMessage={getErrorMessage()}
       />
       {JSON.stringify(results?.city)}
     </>

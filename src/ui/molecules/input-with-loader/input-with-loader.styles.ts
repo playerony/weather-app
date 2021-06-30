@@ -13,6 +13,7 @@ const StyledWrapper = styled.div`
 
 const StyledInput = styled(Input)`
   padding-right: ${spacing.large};
+  margin-bottom: ${spacing.xsmall};
 `;
 
 const StyledLoader = styled(Loader)`
