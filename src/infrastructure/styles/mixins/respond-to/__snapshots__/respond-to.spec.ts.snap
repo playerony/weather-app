@@ -16,39 +16,7 @@ Array [
 ]
 `;
 
-exports[`respondToMax mixin snapshot test should match snapshot 1`] = `
-Array [
-  "
-      @media (",
-  "max-width",
-  ": ",
-  "1919",
-  "px) {
-        ",
-  "background-color: red;",
-  ";
-      }
-    ",
-]
-`;
-
 exports[`respondToMin Mixin snapshot test should match snapshot 1`] = `
-Array [
-  "
-      @media (",
-  "min-width",
-  ": ",
-  "1919",
-  "px) {
-        ",
-  "background-color: red;",
-  ";
-      }
-    ",
-]
-`;
-
-exports[`respondToMin mixin snapshot test should match snapshot 1`] = `
 Array [
   "
       @media (",
