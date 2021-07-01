@@ -14,7 +14,7 @@ describe('kelvinToCelcius Function', () => {
     expect(kelvinToCelcius(undefined)).toEqual(0);
   });
 
-  it('should covner kelvin to celcius', () => {
+  it('should convert kelvin to celcius', () => {
     expect(kelvinToCelcius(0)).toEqual(300);
     expect(kelvinToCelcius(250)).toEqual(50);
     expect(kelvinToCelcius(290)).toEqual(10);
