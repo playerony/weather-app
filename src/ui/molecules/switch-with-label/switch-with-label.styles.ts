@@ -12,7 +12,9 @@ const StyledWrapper = styled.div`
 `;
 
 const StyledLabel = styled(Label)`
-  padding-right: ${spacing.xsmall};
+  &&& {
+    padding-right: ${spacing.xsmall};
+  }
 `;
 
 const S = {

@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 import { size, cover, transitions } from 'polished';
 
-import { radius } from '@infrastructure';
+import { radius, respondToMax } from '@infrastructure';
 
 const StyledWrapper = styled.div`
   ${size(30, 60)}
 
   position: relative;
   display: inline-block;
+
+  ${respondToMax.mobile`
+    ${size(24, 48)}
+  `}
 `;
 
 const StyledSlider = styled.span`
@@ -29,6 +33,12 @@ const StyledSlider = styled.span`
     content: '';
     background-color: white;
     border-radius: ${radius.large};
+
+    ${respondToMax.mobile`
+      left: 2px;
+      bottom: 2px;
+      ${size(20, 20)}
+    `}
   }
 `;
 
@@ -39,6 +49,10 @@ const StyledInput = styled.input`
 
   &:checked + ${StyledSlider}:before {
     transform: translateX(30px);
+
+    ${respondToMax.mobile`
+      transform: translateX(24px);
+    `}
   }
 `;
 
