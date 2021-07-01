@@ -42,7 +42,7 @@ export function Dashboard({
       return null;
     }
 
-    return <S.StyledBigHeading>{`Weather for:${' '}${results.city.name}`}</S.StyledBigHeading>;
+    return <S.StyledBigHeading>{`Weather for: ${results.city.name}`}</S.StyledBigHeading>;
   }
 
   return (
