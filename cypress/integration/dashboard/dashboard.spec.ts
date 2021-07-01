@@ -10,7 +10,7 @@ const fakeLocation = (latitude: number, longitude: number) => ({
   },
 });
 
-describe('dashboard', () => {
+describe('Dashboard Page', () => {
   beforeEach(() => {
     cy.intercept('**/data/2.5/forecast?q=Cracow*', {
       fixture: 'forecast/cracow.mock.json',
