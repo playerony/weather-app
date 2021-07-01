@@ -1,6 +1,6 @@
 import { useState, Children } from 'react';
 
-import { BigHeading, SwitchWithLabel } from '@ui';
+import { MediumHeading, SwitchWithLabel } from '@ui';
 import { useDebounce } from '@utils';
 import { WeatherListItem } from '..';
 import S from './weather-list.styles';
@@ -14,8 +14,8 @@ export const WeatherList = ({ heading, listItems }: WeatherListProps): JSX.Eleme
   const onSwitchClick = (): void => setIsCelsius(!isCelsius);
 
   return (
-    <S.StyledWrapper>
-      <BigHeading modifiers={['center']}>{heading}</BigHeading>
+    <S.StyledWrapper data-test-id="weather-list">
+      <MediumHeading modifiers={['center']}>{heading}</MediumHeading>
       <SwitchWithLabel
         readOnly
         checked={isCelsius}

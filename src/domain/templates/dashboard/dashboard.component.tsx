@@ -1,12 +1,11 @@
 import { Children, FormEvent } from 'react';
 
-import { Label } from '@ui';
 import S from './dashboard.styles';
 import { SearchInput, WeatherList } from './molecules';
 
 import { DashboardProps } from './dashboard.types';
 
-import { getDataForThreeDays, groupListItemsByDate } from './utils';
+import { groupListItemsByDate } from './utils';
 
 export function Dashboard({
   city,
@@ -25,15 +24,15 @@ export function Dashboard({
 
   const errorMessage = hasError ? 'No weather details for the provided city name.' : '';
 
-  const dataForThreeDays = getDataForThreeDays(results);
-  const groupedListItemsByDate = groupListItemsByDate(dataForThreeDays);
+  const groupedListItemsByDate = groupListItemsByDate(results?.list || null);
 
   function renderGroupedData() {
     if (!groupedListItemsByDate) {
       return null;
     }
 
-    const weatherLists = groupedListItemsByDate.map((props) => <WeatherList {...props} />);
+    const groupedDataForThreeDays = groupedListItemsByDate.slice(0, 3);
+    const weatherLists = groupedDataForThreeDays.map((props) => <WeatherList {...props} />);
 
     return Children.toArray(weatherLists);
   }
@@ -43,25 +42,18 @@ export function Dashboard({
       return null;
     }
 
-    return (
-      <Label>
-        Weather for:{' '}
-        <Label strong sameLine>
-          {results.city.name}
-        </Label>
-      </Label>
-    );
+    return <S.StyledBigHeading>{`Weather for: ${results.city.name}`}</S.StyledBigHeading>;
   }
 
   return (
     <S.StyledWrapper>
-      <S.StyledBigHeading>WEATHER APP</S.StyledBigHeading>
       <SearchInput
         value={city || ''}
         isLoading={isLoading}
         errorMessage={errorMessage}
         onChange={onSearchInputChange}
         placeholder="Search for city..."
+        data-test-id="search-for-city-input"
       />
       {renderLocationName()}
       <S.StyledWeatherListsWrapper>{renderGroupedData()}</S.StyledWeatherListsWrapper>
