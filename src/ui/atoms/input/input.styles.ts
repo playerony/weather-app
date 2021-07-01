@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { transitions } from 'polished';
 
-import { typeScale, spacing } from '@infrastructure';
+import { typeScale, spacing, respondToMax } from '@infrastructure';
 
 import { InputProps } from './input.types';
 
@@ -11,9 +11,9 @@ const StyledInput = styled.input<InputProps>`
   border: none;
   min-width: 200px;
   font-size: ${typeScale.h1};
+  padding: ${spacing.xmedium};
   background-color: transparent;
   border-bottom: 2px solid currentColor;
-  padding: ${spacing.xmedium} ${spacing.xmedium};
   color: ${({ theme }) => theme.color.primaryColor};
 
   &::placeholder {
@@ -28,6 +28,11 @@ const StyledInput = styled.input<InputProps>`
     color: ${({ theme }) => theme.color.textOnDisabled};
     background-color: ${({ theme }) => theme.color.disabled};
   }
+
+  ${respondToMax.mobile`
+    padding: ${spacing.small};
+    font-size: ${typeScale.h3};
+  `}
 `;
 
 const S = {

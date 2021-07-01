@@ -1,15 +1,23 @@
 import { Label } from '@ui';
 
 import S from './weather-list-item.styles';
+import { formatTemperature } from '../../utils';
 
 import { WeatherListItemProps } from './weather-list-item.types';
 
+const WIND_UNIT = 'm/s';
+const CELSIUS_UNIT = '℃';
+const FAHRENHEIT_UNIT = '℉';
+
 const makeImageUrl = (icon: string): string => `https://openweathermap.org/img/w/${icon}.png`;
 
-export function WeatherListItem({ details }: WeatherListItemProps): JSX.Element {
+export function WeatherListItem({ details, isCelsius }: WeatherListItemProps): JSX.Element {
   const hours = details.dt_txt.split(' ')[1];
-  const minTemperature = details.main.temp_min;
-  const maxTemperature = details.main.temp_max;
+
+  const temperatureUnit = isCelsius ? CELSIUS_UNIT : FAHRENHEIT_UNIT;
+  const minTemperature = formatTemperature(details.main.temp_min, isCelsius);
+  const maxTemperature = formatTemperature(details.main.temp_max, isCelsius);
+
   const wind = details.wind.speed;
   const { icon, description } = details.weather[0];
 
@@ -19,20 +27,20 @@ export function WeatherListItem({ details }: WeatherListItemProps): JSX.Element 
       <Label>
         Min:{' '}
         <Label strong sameLine>
-          {minTemperature}
+          {minTemperature} {temperatureUnit}
         </Label>
       </Label>
       <Label>
         Max:{' '}
         <Label strong sameLine>
-          {maxTemperature}
+          {maxTemperature} {temperatureUnit}
         </Label>
       </Label>
       <img alt="weather-icon" src={makeImageUrl(icon)} title={description} />
       <Label>
         Wind:{' '}
         <Label strong sameLine>
-          {wind} m/s
+          {wind} {WIND_UNIT}
         </Label>
       </Label>
     </S.StyledWrapper>

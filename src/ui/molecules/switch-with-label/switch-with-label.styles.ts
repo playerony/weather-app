@@ -1,20 +1,24 @@
 import styled from 'styled-components';
 
+import { Label } from '@ui';
+
 import { spacing } from '@infrastructure';
 
 const StyledWrapper = styled.div`
   display: flex;
+  position: relative;
   align-items: center;
-  flex-direction: column;
   max-width: fit-content;
-  padding: ${spacing.small} 0;
+`;
 
-  & > * {
-    padding-top: ${spacing.small};
+const StyledLabel = styled(Label)`
+  &&& {
+    padding-right: ${spacing.xsmall};
   }
 `;
 
 const S = {
+  StyledLabel,
   StyledWrapper,
 };
 

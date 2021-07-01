@@ -34,8 +34,12 @@ const StyledLabel = styled.label<StyledLabelProps>`
       color: ${theme.color.errorColor};
     `}
   
-  ${respondToMax.xmobile`
+  ${respondToMax.mobile`
     font-size: ${typeScale.helperText};
+  `}
+
+  ${respondToMax.xmobile`
+    font-size: ${typeScale.copyrightText};
   `}
 `;
 

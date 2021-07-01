@@ -1,6 +1,6 @@
 import { Children, FormEvent } from 'react';
 
-import { Label, BigHeading } from '@ui';
+import { Label } from '@ui';
 import S from './dashboard.styles';
 import { SearchInput, WeatherList } from './molecules';
 
@@ -55,7 +55,7 @@ export function Dashboard({
 
   return (
     <S.StyledWrapper>
-      <BigHeading>weather app</BigHeading>
+      <S.StyledBigHeading>WEATHER APP</S.StyledBigHeading>
       <SearchInput
         value={city || ''}
         isLoading={isLoading}
