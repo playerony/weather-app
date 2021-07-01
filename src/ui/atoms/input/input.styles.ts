@@ -33,6 +33,11 @@ const StyledInput = styled.input<InputProps>`
     padding: ${spacing.small};
     font-size: ${typeScale.h3};
   `}
+
+  ${respondToMax.xmobile`
+    padding: ${spacing.xsmall};
+    font-size: ${typeScale.h3};
+  `}
 `;
 
 const S = {
