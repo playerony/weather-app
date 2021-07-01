@@ -43,3 +43,5 @@ describe('dashboard', () => {
     cy.get('h1').should('be.visible').contains('Weather for: Gliwice');
   });
 });
+
+export {};
