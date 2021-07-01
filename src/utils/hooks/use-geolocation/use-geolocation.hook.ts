@@ -13,7 +13,7 @@ export function useGeolocation(): State {
     hasError: false,
   });
 
-  function onSuccess({ coords: { latitude: lat, longitude: lon } }: GeolocationPosition) {
+  function onSuccess({ coords: { latitude: lat, longitude: lon } }: GeolocationPosition): void {
     setState({
       loaded: true,
       coords: {
@@ -31,9 +31,7 @@ export function useGeolocation(): State {
   }
 
   useEffect(() => {
-    const geolocationSupport = isGeolocationSupport();
-
-    if (!geolocationSupport) {
+    if (!isGeolocationSupport()) {
       setState({
         loaded: true,
       });

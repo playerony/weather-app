@@ -1,7 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { functionImportTest } from '@utils';
-import { useDebounce } from './use-debounce.hook';
+import { useDebounce, functionImportTest } from '@utils';
 
 describe('useDebounce Hook', () => {
   functionImportTest(useDebounce);

@@ -1,4 +1,4 @@
-import { isObject } from '@utils';
+import { isObject, isNumber, isString } from '@utils';
 
 export function removeEmptyPropertiesFromObject<T>(value: T): Partial<T> | null {
   if (!isObject(value)) {
@@ -10,8 +10,10 @@ export function removeEmptyPropertiesFromObject<T>(value: T): Partial<T> | null 
 
   keys.forEach((_key: keyof T) => {
     const currentObjectValue = value[_key];
+    const isNumberValue = isNumber(currentObjectValue);
+    const isStringValue = isString(currentObjectValue);
 
-    if (currentObjectValue) {
+    if (currentObjectValue || isNumberValue || isStringValue) {
       resultObject[_key] = currentObjectValue;
     }
   });

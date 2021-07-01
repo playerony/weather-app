@@ -64,9 +64,7 @@ export function Dashboard({
         placeholder="Search for city..."
       />
       {renderLocationName()}
-      <S.StyledWeatherListsWrapper>
-        {renderGroupedData()}
-      </S.StyledWeatherListsWrapper>
+      <S.StyledWeatherListsWrapper>{renderGroupedData()}</S.StyledWeatherListsWrapper>
     </S.StyledWrapper>
   );
 }
