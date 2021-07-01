@@ -14,8 +14,6 @@ export function Dashboard({
   hasError,
   isLoading,
 }: DashboardProps): JSX.Element {
-  const errorMessage = hasError ? 'No weather details for the provided city name.' : '';
-
   function onSearchInputChange(event: FormEvent<HTMLInputElement>): void {
     if (city === null && isLoading) {
       return;
@@ -44,6 +42,8 @@ export function Dashboard({
 
     return <S.StyledBigHeading>{`Weather for: ${results.city.name}`}</S.StyledBigHeading>;
   }
+
+  const errorMessage = hasError ? 'No weather details for the provided city name.' : '';
 
   return (
     <S.StyledWrapper>
