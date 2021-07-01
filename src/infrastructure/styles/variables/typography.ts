@@ -33,4 +33,5 @@ export const spacing = {
 export const radius = {
   default: '5px',
   medium: '10px',
+  large: '20px',
 };

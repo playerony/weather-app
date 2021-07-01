@@ -13,7 +13,7 @@ export function useGet<ResultsType>(url: string = ''): State<ResultsType> {
     isLoading: false,
   });
 
-  function onFetchSuccess(response: AxiosResponse<ResultsType>, didCancel: boolean) {
+  function onSuccess(response: AxiosResponse<ResultsType>, didCancel: boolean): void {
     if (!didCancel && response?.status === 200) {
       setState({
         hasError: false,
@@ -25,7 +25,7 @@ export function useGet<ResultsType>(url: string = ''): State<ResultsType> {
     }
   }
 
-  function onFetchError(didCancel: boolean) {
+  function onError(didCancel: boolean): void {
     if (!didCancel) {
       setState({
         hasError: true,
@@ -47,9 +47,9 @@ export function useGet<ResultsType>(url: string = ''): State<ResultsType> {
         try {
           const response: AxiosResponse<ResultsType> = await axiosInstance.get(url);
 
-          onFetchSuccess(response, didCancel);
+          onSuccess(response, didCancel);
         } catch (error) {
-          onFetchError(didCancel);
+          onError(didCancel);
         }
       }
     }

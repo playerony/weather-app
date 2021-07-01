@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { size, cover, animation, borderColor } from 'polished';
 import { applyStyleModifiers, ModifiersConfig } from 'styled-components-modifiers';
 
+import { radius } from '@infrastructure';
+
 import { LoaderProps } from './loader.types';
 
 const LOADER_MODIFIERS: ModifiersConfig = {
@@ -11,7 +13,7 @@ const LOADER_MODIFIERS: ModifiersConfig = {
 
     &::after,
     &::before {
-      border-radius: 10px;
+      border-radius: ${radius.default};
     }
   `,
   default: () => `
@@ -20,7 +22,7 @@ const LOADER_MODIFIERS: ModifiersConfig = {
 
     &::after,
     &::before {
-      border-radius: 20px;
+      border-radius: ${radius.large};
     }
   `,
   large: () => `
