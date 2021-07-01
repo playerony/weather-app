@@ -1,10 +1,10 @@
-import { kelvinToCelcius, kelvinToFahrenheit } from '@utils';
+import { kelvinToCelsius, kelvinToFahrenheit } from '@utils';
 
 export function formatTemperature(kelvin: number, isCelsius: boolean): string {
-  const temperatureInCelcius = kelvinToCelcius(kelvin);
+  const temperatureInCelsius = kelvinToCelsius(kelvin);
   const temperatureInFahrenheit = kelvinToFahrenheit(kelvin);
 
-  const temperatureForSelectedUnit = isCelsius ? temperatureInCelcius : temperatureInFahrenheit;
+  const temperatureForSelectedUnit = isCelsius ? temperatureInCelsius : temperatureInFahrenheit;
 
   return temperatureForSelectedUnit.toFixed(1);
 }

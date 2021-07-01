@@ -1,6 +1,6 @@
 import { isNumber } from '@utils';
 
-export function kelvinToCelcius(kelvin: number): number {
+export function kelvinToCelsius(kelvin: number): number {
   if (!isNumber(kelvin)) {
     return 0;
   }

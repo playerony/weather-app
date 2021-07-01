@@ -5,6 +5,6 @@ export * from './is-object/is-object.function';
 export * from './is-string/is-string.function';
 export * from './is-function/is-function.function';
 export * from './try-parse-json/try-parse-json.function';
-export * from './kelvin-to-celcius/kelvin-to-celcius.function';
+export * from './kelvin-to-celsius/kelvin-to-celsius.function';
 export * from './kelvin-to-fahrenheit/kelvin-to-fahrenheit.function';
 export * from './remove-empty-properties-from-object/remove-empty-properties-from-object.function';
