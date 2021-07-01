@@ -23,19 +23,20 @@
         "*.js"
       ],
       "rules": {
-        "import/no-cycle": "off",
         "react/jsx-indent": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/jsx-one-expression-per-line": "off",
+        "import/no-cycle": "off",
+        "import/prefer-default-export": "off",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-use-before-define": "off",
         "operator-linebreak": "off",
         "no-underscore-dangle": "off",
         "object-curly-newline": "off",
         "no-prototype-builtins": "off",
-        "react/react-in-jsx-scope": "off",
-        "implicit-arrow-linebreak": "off",
-        "@typescript-eslint/indent": "off",
-        "import/prefer-default-export": "off",
-        "react/jsx-props-no-spreading": "off",
-        "react/jsx-one-expression-per-line": "off",
-        "@typescript-eslint/no-use-before-define": "off"
+        "function-paren-newline": "off",
+        "implicit-arrow-linebreak": "off"
       }
     }
   ]

@@ -14,19 +14,19 @@ export function Dashboard({
   hasError,
   isLoading,
 }: DashboardProps): JSX.Element {
-  const onSearchInputChange = (event: FormEvent<HTMLInputElement>): void => {
+  const errorMessage = hasError ? 'No weather details for the provided city name.' : '';
+
+  function onSearchInputChange(event: FormEvent<HTMLInputElement>): void {
     if (city === null && isLoading) {
       return;
     }
 
-    setCity(event.currentTarget.value.trim());
-  };
+    setCity(event.currentTarget.value);
+  }
 
-  const errorMessage = hasError ? 'No weather details for the provided city name.' : '';
+  function renderWeatherLists() {
+    const groupedListItemsByDate = groupListItemsByDate(results?.list || null);
 
-  const groupedListItemsByDate = groupListItemsByDate(results?.list || null);
-
-  function renderGroupedData() {
     if (!groupedListItemsByDate) {
       return null;
     }
@@ -56,7 +56,7 @@ export function Dashboard({
         data-test-id="search-for-city-input"
       />
       {renderLocationName()}
-      <S.StyledWeatherListsWrapper>{renderGroupedData()}</S.StyledWeatherListsWrapper>
+      <S.StyledWeatherListsWrapper>{renderWeatherLists()}</S.StyledWeatherListsWrapper>
     </S.StyledWrapper>
   );
 }

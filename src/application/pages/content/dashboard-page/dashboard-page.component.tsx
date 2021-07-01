@@ -15,10 +15,14 @@ export function DashboardPage(): JSX.Element {
 
   const [city, debouncedCity, setCity] = useCity(lastSelectedCity);
 
-  const weatherApiDataCoords = debouncedCity === null ? geolocation.coords : null;
-  const weatherApiData = { q: debouncedCity, ...weatherApiDataCoords };
+  function getWeatherHookData() {
+    const q = debouncedCity !== null ? debouncedCity.trim() : null;
+    const coords = debouncedCity === null ? geolocation.coords : null;
 
-  const weatherApiResponse = useWeather<WeatherApiResponse>(weatherApiData);
+    return { q, ...coords };
+  }
+
+  const weatherApiResponse = useWeather<WeatherApiResponse>(getWeatherHookData());
 
   useEffect(() => {
     if (weatherApiResponse.results) {

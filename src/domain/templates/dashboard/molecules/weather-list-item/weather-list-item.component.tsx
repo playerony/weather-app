@@ -11,8 +11,11 @@ const FAHRENHEIT_UNIT = '℉';
 
 const makeImageUrl = (icon: string): string => `https://openweathermap.org/img/w/${icon}.png`;
 
+const formatHours = (hours: string): string => hours.split(':').slice(0, 2).join(':');
+
 export function WeatherListItem({ details, isCelsius }: WeatherListItemProps): JSX.Element {
   const hours = details.dt_txt.split(' ')[1];
+  const formattedHours = formatHours(hours);
 
   const temperatureUnit = isCelsius ? CELSIUS_UNIT : FAHRENHEIT_UNIT;
   const minTemperature = formatTemperature(details.main.temp_min, isCelsius);
@@ -23,7 +26,7 @@ export function WeatherListItem({ details, isCelsius }: WeatherListItemProps): J
 
   return (
     <S.StyledWrapper>
-      <Label strong>{hours}</Label>
+      <Label strong>{formattedHours}</Label>
       <Label>
         Min:{' '}
         <Label strong sameLine>
@@ -36,7 +39,7 @@ export function WeatherListItem({ details, isCelsius }: WeatherListItemProps): J
           {maxTemperature} {temperatureUnit}
         </Label>
       </Label>
-      <img alt="weather-icon" src={makeImageUrl(icon)} title={description} />
+      <S.StyledImage alt="weather-icon" src={makeImageUrl(icon)} title={description} />
       <Label>
         Wind:{' '}
         <Label strong sameLine>

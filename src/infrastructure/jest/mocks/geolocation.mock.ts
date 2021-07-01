@@ -5,7 +5,8 @@ const mockGeolocation = {
         latitude: 50,
         longitude: 50,
       },
-    })),
+    }),
+  ),
 };
 
 Object.defineProperty(window.navigator, 'geolocation', { value: mockGeolocation });

@@ -1,0 +1,25 @@
+import { boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+import { SearchInput } from './search-input.component';
+
+<Meta title="Design System/molecules/SearchInput" component={SearchInput} />
+
+# SearchInput
+
+SearchInput is used to allow users to search for something.
+
+<Preview withToolbar>
+  <Story name="default">
+    <SearchInput
+      errorMessage="Error message"
+      placeholder="Placeholder..."
+      onBlur={action('input-blur')}
+      onFocus={action('input-focus')}
+      onChange={action('input-change')}
+      isLoading={boolean('Loading', false)}
+      disabled={boolean('Disabled', false)}
+    />
+  </Story>
+</Preview>
