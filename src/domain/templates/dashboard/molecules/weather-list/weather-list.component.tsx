@@ -11,9 +11,7 @@ export const WeatherList = ({ heading, listItems }: WeatherListProps): JSX.Eleme
   const [isCelsius, setIsCelsius] = useState<boolean>(true);
   const debouncedIsCelsius = useDebounce(isCelsius, 500);
 
-  const onSwitchChange = (): void => {
-    setIsCelsius(!isCelsius);
-  };
+  const onSwitchClick = (): void => setIsCelsius(!isCelsius);
 
   return (
     <S.StyledWrapper>
@@ -21,16 +19,16 @@ export const WeatherList = ({ heading, listItems }: WeatherListProps): JSX.Eleme
       <SwitchWithLabel
         readOnly
         checked={isCelsius}
-        onClick={onSwitchChange}
+        onClick={onSwitchClick}
         label="Fahrenheit / Celsius"
       />
-      <S.StyledItemsWrapper>
+      <div>
         {Children.toArray(
           listItems.map((_listItem) => (
             <WeatherListItem isCelsius={debouncedIsCelsius} details={_listItem} />
           )),
         )}
-      </S.StyledItemsWrapper>
+      </div>
     </S.StyledWrapper>
   );
 };

@@ -3,17 +3,19 @@ import styled from 'styled-components';
 import { spacing } from '@infrastructure';
 
 const StyledWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   max-width: fit-content;
   padding: ${spacing.small} 0;
-`;
 
-const StyledItemsWrapper = styled.div`
-  padding-top: ${spacing.small};
+  & > * {
+    padding-top: ${spacing.small};
+  }
 `;
 
 const S = {
   StyledWrapper,
-  StyledItemsWrapper,
 };
 
 export default S;
