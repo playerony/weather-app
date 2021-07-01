@@ -5,5 +5,5 @@ export function kelvinToCelcius(kelvin: number): number {
     return 0;
   }
 
-  return 300 - kelvin;
+  return kelvin - 273.15;
 }

@@ -15,8 +15,8 @@ describe('kelvinToCelcius Function', () => {
   });
 
   it('should convert kelvin to celcius', () => {
-    expect(kelvinToCelcius(0)).toEqual(300);
-    expect(kelvinToCelcius(250)).toEqual(50);
-    expect(kelvinToCelcius(290)).toEqual(10);
+    expect(kelvinToCelcius(0)).toEqual(-273.15);
+    expect(kelvinToCelcius(290)).toEqual(16.850000000000023);
+    expect(kelvinToCelcius(250)).toEqual(-23.149999999999977);
   });
 });
