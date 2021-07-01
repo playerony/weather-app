@@ -6,6 +6,7 @@ import { spacing } from '@infrastructure';
 
 const StyledWrapper = styled(CenterBlock)`
   justify-content: start;
+  padding-top: ${spacing.medium};
 `;
 
 const StyledBigHeading = styled(BigHeading)`
@@ -14,7 +15,6 @@ const StyledBigHeading = styled(BigHeading)`
 
 const StyledWeatherListsWrapper = styled.div`
   display: grid;
-  padding-top: ${spacing.medium};
 `;
 
 const S = {

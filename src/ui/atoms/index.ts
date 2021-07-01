@@ -3,3 +3,4 @@ export * from './label/label.component';
 export * from './loader/loader.component';
 export * from './switch/switch.component';
 export * from './big-heading/big-heading.component';
+export * from './medium-heading/medium-heading.component';
