@@ -1,19 +1,32 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
 
 import { Dashboard, WeatherApiResponse } from '@domain';
 
-import { useDebounce } from '@utils';
-import { useWeather } from './utils';
+import { useGeolocation, useLocalStorage } from '@utils';
+import { useCity, useWeather } from './utils';
 
 export function DashboardPage(): JSX.Element {
-  // TODO - geolocation at default
-  // TODO - keep it in localstorage
-  const defaultCity = 'Kraków';
-  const [city, setCity] = useState<string>(defaultCity);
+  const geolocation = useGeolocation();
 
-  const debouncedCity = useDebounce(city, 300);
+  const [lastSelectedCity, setLastSelectedCity] = useLocalStorage<string | null>(
+    'last-selected-city',
+    null,
+  );
 
-  const weatherApiResponse = useWeather<WeatherApiResponse>(debouncedCity);
+  const [city, debouncedCity, setCity] = useCity(lastSelectedCity);
 
-  return <Dashboard city={city} setCity={setCity} {...weatherApiResponse} />;
+  const weatherApiDataCoords = debouncedCity === null ? geolocation.coords : null;
+  const weatherApiData = { q: debouncedCity, ...weatherApiDataCoords };
+
+  const weatherApiResponse = useWeather<WeatherApiResponse>(weatherApiData);
+
+  useEffect(() => {
+    if (weatherApiResponse.results) {
+      setLastSelectedCity(weatherApiResponse.results.city.name);
+    }
+  }, [weatherApiResponse.results]);
+
+  const isLoading = weatherApiResponse.isLoading || (!geolocation.loaded && !lastSelectedCity);
+
+  return <Dashboard city={city} setCity={setCity} {...weatherApiResponse} isLoading={isLoading} />;
 }

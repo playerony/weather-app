@@ -5,6 +5,6 @@ export interface DashboardProps {
   isLoading: boolean;
   results: WeatherApiResponse | null;
 
-  city: string;
+  city: string | null;
   setCity: (city: string) => void;
 }

@@ -1,7 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { functionImportTest } from '@utils';
-import { useLocalStorage } from './use-local-storage.hook';
+import { useLocalStorage, functionImportTest } from '@utils';
 
 describe('useLocalStorage Hook', () => {
   functionImportTest(useLocalStorage);

@@ -8,7 +8,7 @@ export function getDataForThreeDays(results: WeatherApiResponse | null): ListIte
   }
 
   const startDate = new Date(results.list[0].dt_txt);
-  const endDate = addDaysToDate(startDate, 3);
+  const endDate = addDaysToDate(startDate, 2);
 
   if (!endDate) {
     return null;
