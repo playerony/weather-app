@@ -1,6 +1,6 @@
 import { Children, FormEvent } from 'react';
 
-import { BigHeading } from '@ui';
+import { Label, BigHeading } from '@ui';
 import S from './dashboard.styles';
 import { SearchInput, WeatherList } from './molecules';
 
@@ -15,8 +15,13 @@ export function Dashboard({
   hasError,
   isLoading,
 }: DashboardProps): JSX.Element {
-  const onSearchInputChange = (event: FormEvent<HTMLInputElement>): void =>
+  const onSearchInputChange = (event: FormEvent<HTMLInputElement>): void => {
+    if (city === null && isLoading) {
+      return;
+    }
+
     setCity(event.currentTarget.value.trim());
+  };
 
   const errorMessage = hasError ? 'No weather details for the provided city name.' : '';
 
@@ -33,18 +38,35 @@ export function Dashboard({
     return Children.toArray(weatherLists);
   }
 
+  function renderLocationName() {
+    if (!results) {
+      return null;
+    }
+
+    return (
+      <Label>
+        Weather for:{' '}
+        <Label strong sameLine>
+          {results.city.name}
+        </Label>
+      </Label>
+    );
+  }
+
   return (
     <S.StyledWrapper>
       <BigHeading>weather app</BigHeading>
       <SearchInput
-        value={city}
+        value={city || ''}
         isLoading={isLoading}
         errorMessage={errorMessage}
         onChange={onSearchInputChange}
         placeholder="Search for city..."
       />
-      {results ? <BigHeading>Weather for: {results.city.name}</BigHeading> : null}
-      {renderGroupedData()}
+      {renderLocationName()}
+      <S.StyledWeatherListsWrapper>
+        {renderGroupedData()}
+      </S.StyledWeatherListsWrapper>
     </S.StyledWrapper>
   );
 }

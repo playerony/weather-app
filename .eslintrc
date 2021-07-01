@@ -26,6 +26,7 @@
         "import/no-cycle": "off",
         "react/jsx-indent": "off",
         "operator-linebreak": "off",
+        "no-underscore-dangle": "off",
         "object-curly-newline": "off",
         "no-prototype-builtins": "off",
         "react/react-in-jsx-scope": "off",

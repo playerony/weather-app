@@ -7,8 +7,13 @@ const StyledWrapper = styled.div`
   padding: ${spacing.small} 0;
 `;
 
+const StyledItemsWrapper = styled.div`
+  padding-top: ${spacing.small};
+`;
+
 const S = {
   StyledWrapper,
+  StyledItemsWrapper,
 };
 
 export default S;
