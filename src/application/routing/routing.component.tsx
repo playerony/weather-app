@@ -1,6 +1,7 @@
 import { Children } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { routingConfig, Routes } from './routing.config';
+
+import { Routes, routingConfig } from '.';
 
 export const Routing = (): JSX.Element => (
   <Switch>

@@ -22,6 +22,14 @@ export function Dashboard({
     setCity(event.currentTarget.value);
   }
 
+  function renderLocationName() {
+    if (!results) {
+      return null;
+    }
+
+    return <S.StyledBigHeading>{`Weather for: ${results.city.name}`}</S.StyledBigHeading>;
+  }
+
   function renderWeatherLists() {
     const groupedListItemsByDate = groupListItemsByDate(results?.list || null);
 
@@ -33,14 +41,6 @@ export function Dashboard({
     const weatherLists = groupedDataForThreeDays.map((props) => <WeatherList {...props} />);
 
     return Children.toArray(weatherLists);
-  }
-
-  function renderLocationName() {
-    if (!results) {
-      return null;
-    }
-
-    return <S.StyledBigHeading>{`Weather for: ${results.city.name}`}</S.StyledBigHeading>;
   }
 
   const errorMessage = hasError ? 'No weather details for the provided city name.' : '';

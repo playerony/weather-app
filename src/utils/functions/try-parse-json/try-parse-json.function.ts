@@ -8,12 +8,8 @@ export function tryParseJSON<T = any>(jsonString: string): T | null {
   try {
     const result = JSON.parse(jsonString);
 
-    if (result) {
-      return result;
-    }
+    return result;
   } catch {
     return null;
   }
-
-  return null;
 }

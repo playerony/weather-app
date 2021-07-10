@@ -35,9 +35,10 @@ const StyledSlider = styled.span`
     border-radius: ${radius.large};
 
     ${respondToMax.mobile`
+      ${size(20, 20)}
+
       left: 2px;
       bottom: 2px;
-      ${size(20, 20)}
     `}
   }
 `;

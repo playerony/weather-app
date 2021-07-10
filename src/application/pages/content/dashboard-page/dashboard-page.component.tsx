@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 
 import { Dashboard, WeatherApiResponse } from '@domain';
 
-import { useGeolocation, useLocalStorage } from '@utils';
 import { useCity, useWeather } from './utils';
+import { useGeolocation, useLocalStorage } from '@utils';
 
 export function DashboardPage(): JSX.Element {
   const geolocation = useGeolocation();

@@ -28,7 +28,7 @@ describe('Dashboard Page', () => {
     cy.visit('/', fakeLocation(40, 40));
   });
 
-  it('should search for weather by city name', () => {
+  it('should search for weather data by city name', () => {
     cy.wait(['@get-geolocation-forecast']);
     cy.get('[data-test-id="search-for-city-input"]').should('be.visible').type('Cracow');
 
