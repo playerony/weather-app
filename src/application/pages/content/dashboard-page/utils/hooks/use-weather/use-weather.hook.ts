@@ -1,8 +1,7 @@
-import { useGet, removeEmptyPropertiesFromObject } from '@utils';
-
 import { Input } from './use-weather.types';
 
 import { serializeQueryParams } from '../..';
+import { useGet, removeEmptyPropertiesFromObject } from '@utils';
 
 const API_KEY = '29b4ced87609172d9b6777083ee0c9fb';
 

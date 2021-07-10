@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { applyStyleModifiers, ModifiersConfig } from 'styled-components-modifiers';
 
-import { typeScale, fontWeight, respondToMax } from '@infrastructure';
-
 import { BigHeadingProps } from './big-heading.types';
+
+import { typeScale, fontWeight, respondToMax } from '@infrastructure';
 
 const BIG_HEADING_MODIFIERS: ModifiersConfig = {
   center: () => `

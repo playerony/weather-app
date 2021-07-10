@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { functionImportTest } from '@utils';
 import { useCity } from './use-city.hook';
+import { functionImportTest } from '@utils';
 
 describe('useCity Hook', () => {
   functionImportTest(useCity);
